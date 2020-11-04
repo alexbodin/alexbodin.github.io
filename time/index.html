@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <!--link rel="stylesheet" href="/assets/css/style.css"/-->
+  <title>Tid</title>
+
+
+
+  <style type="text/css">
+  </style>
+  
+  <script>
+  
+  Date.prototype.getWeek = function() {
+    var onejan = new Date(this.getFullYear(), 0, 1);
+    return Math.ceil((((this - onejan) / 86400000) + onejan.getDay() + 1) / 7);
+  }
+  
+  window.setInterval(function () {timerFunc()}, 1000);
+  
+  function timerFunc() {
+  
+    var d = new Date();
+    day = ["Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag", "Söndag"];
+    month = ["jan", "feb", "mar", "apr", "maj", "jun", "jul", "aug", "sep", "okt", "nov", "dec"];
+  
+  document.getElementById("v").innerHTML = day[d.getDay()] + ' V.'+ d.getWeek();
+  document.getElementById("d").innerHTML = d.getDate() + " " + month[d.getMonth()] + " " + d.getFullYear();
+  document.getElementById("t").innerHTML = d.toLocaleTimeString();
+  }
+  </script>
+</head>
+<body>
+  <main>
+    <h1>Tid</h1>
+    <p class="bigtext1" id="v"></p>
+    <p class="bigtext1" id="d"></p>
+    <p class="bigtext2" id="t"></p>
+  </main>
+</body>
+</html>

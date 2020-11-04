@@ -4,10 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alexander Bodin</title>
+    <script>
+        var dateBorn = new Date("1998-06-02T22:36");
+        
+        window.setInterval(function () {updateAge()}, 1000);
+        
+        function updateAge() {
+            var d = Math.abs(Date.now() - dateBorn)/1000;
+            document.getElementById("ageY").innerHTML = Math.floor(d/31557600) + " år";
+            document.getElementById("ageD").innerHTML = Math.floor((d/86400)%365.25) + " dagar";
+            document.getElementById("ageH").innerHTML = Math.floor((d/3600)%24) + " timmar";
+            document.getElementById("ageM").innerHTML = Math.floor((d/60)%60) + " minuter";
+            document.getElementById("ageS").innerHTML = Math.floor(d%60) + " sekunder";
+        }
+        
+    </script>
 </head>
 <body>
-    <h1>Hello World!!!</h1>
-    <a href="next">Nästa</a>
-    <a href="starfield">Starfield</a>
+    <div>
+        <h1>Alexanders Website</h1>
+        <p><a href="https://github.com/alexbodin">alexbodin on Github</a></p>
+        <p><a href="next">Nästa spårvagn/buss</a></p>
+        <p><a href="time">Nästa spårvagn/buss</a></p>
+        <p><a href="starfield">Starfield</a></p>
+    </div>
+    <div>
+        <h3>Just nu är jag:</h3>
+        <span id="ageY"></span>
+        <span id="ageD"></span>
+        <span id="ageH"></span>
+        <span id="ageM"></span>
+        <span id="ageS"></span>
+    </div>
 </body>
 </html>
