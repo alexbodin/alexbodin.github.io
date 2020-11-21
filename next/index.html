@@ -85,7 +85,7 @@ function getNext(stop, date, time, timespan, bearer, container) {
 		            }
 				}
         }
-        arr = orderArr(arr)
+        arr = orderArr(arr);
         //document.getElementById(container).innerHTML = "<xmp>" + JSON.stringify(arr, null, 4) + "</xmp>";
         structureHTML(arr, jsn.servertime + " " + jsn.serverdate, stopname, container);
     }};
@@ -263,7 +263,7 @@ td:nth-child(3) {
 </div>
 
 <script>
-window.setInterval(function () {stopsChanged()}, 20000);
+//window.setInterval(function () {stopsChanged()}, 20000);
 stopsChanged();
 </script>
 </body>
