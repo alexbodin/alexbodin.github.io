@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Philips TV Remote</title>
+  <meta name="description" content="Vecka"/>
+	<meta name="author" content="Alex"/>
+  <meta charset="UTF-8">
+	
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+
+	<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+	<link rel="shortcut icon" href="favicon.png"/>
+	<link rel="icon" type="image/png" href="favicon.png"/>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div><p><a href="channels.html">Channel list</a></p></div>
+  <div class="grid-container">
+    <button class="grid-item categ_input" type="button" onclick="key_home()">🏠</button>
+    <button class="grid-item categ_pow" type="button" onclick="key_standby()">⏻</button>
+    <button class="grid-item categ_input" type="button" onclick="key_source()">🎛</button>
+    <button class="grid-item categ_input" type="button" onclick="key_sourceChromecast()">HDMI1</button>
+    <button class="grid-item categ_input" type="button" onclick="key_sourceWii()">HDMI2</button>
+    <button class="grid-item categ_input" type="button" onclick="key_sourceComputer()">HDMI3</button>
+    
+    <button class="grid-item categ_media" type="button" onclick="key_stop()">⏹</button>
+    <button class="grid-item categ_media" type="button" onclick="key_pause()">⏸</button>
+    <button class="grid-item categ_media" type="button" onclick="key_record()">⏺</button>
+    <button class="grid-item categ_media" type="button" onclick="key_rewind()">⏪</button>
+    <button class="grid-item categ_media" type="button" onclick="key_play_pause()">▶</button>
+    <button class="grid-item categ_media" type="button" onclick="key_fast_forward()">⏩</button>
+    
+    <button class="grid-item categ_arrow" type="button" onclick="key_back()">↵</button>
+    <button class="grid-item categ_arrow" type="button" onclick="key_up()">↑</button>
+    <button class="grid-item categ_arrow" type="button" onclick="key_confirm()">OK</button>
+    <button class="grid-item categ_arrow" type="button" onclick="key_left()">←</button>
+    <button class="grid-item categ_arrow" type="button" onclick="key_down()">↓</button>
+    <button class="grid-item categ_arrow" type="button" onclick="key_right()">→</button>
+    
+    <button class="grid-item categ_vol" type="button" onclick="key_mute()">🔇 0</button>
+    <button class="grid-item categ_vol" type="button" onclick="sendVolume(10)">🔈 10</button>
+    <button class="grid-item categ_vol" type="button" onclick="key_volume_up()">🔊➕</button>
+    <button class="grid-item categ_vol" type="button" onclick="sendVolume(20)">🔈 20</button>
+    <button class="grid-item categ_vol" type="button" onclick="sendVolume(24)">🔈 24</button>
+    <button class="grid-item categ_vol" type="button" onclick="key_volume_down()">🔉➖</button>
+    
+    <button class="grid-item categ_tv" type="button" onclick="key_info()">Info</button>
+    <button class="grid-item categ_tv" type="button" onclick="key_watch_tv()">📺</button>
+    <button class="grid-item categ_tv" type="button" onclick="key_channel_step_up()">Ch➕</button>
+    <button class="grid-item categ_tv" type="button" onclick="key_tvguide()">Guide</button>
+    <button class="grid-item categ_tv" type="button" onclick="key_list()">List</button>
+    <button class="grid-item categ_tv" type="button" onclick="key_channel_step_down()">Ch➖</button>
+    
+    <button class="grid-item categ_num" type="button" onclick="key_digit1()">1</button>
+    <button class="grid-item categ_num" type="button" onclick="key_digit2()">2</button>
+    <button class="grid-item categ_num" type="button" onclick="key_digit3()">3</button>
+    <button class="grid-item categ_num" type="button" onclick="key_digit4()">4</button>
+    <button class="grid-item categ_num" type="button" onclick="key_digit5()">5</button>
+    <button class="grid-item categ_num" type="button" onclick="key_digit6()">6</button>
+    <button class="grid-item categ_num" type="button" onclick="key_digit7()">7</button>
+    <button class="grid-item categ_num" type="button" onclick="key_digit8()">8</button>
+    <button class="grid-item categ_num" type="button" onclick="key_digit9()">9</button>
+    <button class="grid-item categ_tv" type="button" onclick="key_subtitle()">Subtitle</button>
+    <button class="grid-item categ_num" type="button" onclick="key_digit0()">0</button>
+    <button class="grid-item categ_tv" type="button" onclick="key_teletext()">Text</button>
+    
+    <button class="grid-item categ_settings" type="button" onclick="key_adjust()">⚙</button>
+    <button class="grid-item categ_settings" type="button" onclick="key_options()">⌥</button>
+    <button class="grid-item categ_settings" type="button" onclick="key_ambilight_on_off()">🔆</button>
+    <button class="grid-item categ_settings" type="button" onclick="key_red()">🟥</button>
+    <button class="grid-item categ_settings" type="button" onclick="key_green()">🟩</button>
+    <button class="grid-item categ_settings" type="button" onclick="key_yellow()">🟨</button>
+    <button class="grid-item categ_settings" type="button" onclick="key_blue()">🟦</button>
+    
+    <!--button class="grid-item" type="button" onclick="key_dot()">⚫</button>
+    <button class="grid-item" type="button" onclick="key_viewmode()">⎚</button>
+    <button class="grid-item" type="button" onclick="key_previous()">⏮</button>
+    <button class="grid-item" type="button" onclick="key_next()">⏭</button-->
+</div>
+<div id="content"></div>
+
+<!--div class="grid-container">
+  <button class="grid-item" type="button" onclick="">-</button>
+  <button class="grid-item" type="button" onclick="key_standby()">⏻</button>
+  <button class="grid-item" type="button" onclick="">-</button>
+  <button class="grid-item" type="button" onclick="key_stop()">⏹</button>
+  <button class="grid-item" type="button" onclick="key_pause()">⏸</button>
+  <button class="grid-item" type="button" onclick="key_record()">⏺</button>
+  <button class="grid-item" type="button" onclick="key_rewind()">⏪</button>
+  <button class="grid-item" type="button" onclick="key_play_pause()">▶</button>
+  <button class="grid-item" type="button" onclick="key_fast_forward()">⏩</button>
+  <button class="grid-item" type="button" onclick="key_ambilight_on_off()">🔆</button>
+  <button class="grid-item" type="button" onclick="key_find()">🔍</button>
+  <button class="grid-item" type="button" onclick="key_adjust()">⚙</button>
+  <button class="grid-item" type="button" onclick="key_tvguide()">🗓</button>
+  <button class="grid-item" type="button" onclick="key_list()">☰</button>
+  <button class="grid-item" type="button" onclick="key_source()">🎛</button>
+  <button class="grid-item" type="button" onclick="">---smart_tv---</button>
+  <button class="grid-item" type="button" onclick="key_home()">🏠</button>
+  <button class="grid-item" type="button" onclick="key_watch_tv()">📺</button>
+  <button class="grid-item" type="button" onclick="key_red()">🟥</button>
+  <button class="grid-item" type="button" onclick="key_green()">🟩</button>
+  <button class="grid-item" type="button" onclick="key_yellow()">🟨</button>
+  <button class="grid-item" type="button" onclick="key_blue()">🟦</button>
+  <button class="grid-item" type="button" onclick="key_info()">ℹ</button>
+  <button class="grid-item" type="button" onclick="key_up()">⬆</button>
+  <button class="grid-item" type="button" onclick="key_options()">⌥</button>
+  <button class="grid-item" type="button" onclick="key_left()">⬅</button>
+  <button class="grid-item" type="button" onclick="key_confirm()">🆗</button>
+  <button class="grid-item" type="button" onclick="key_right()">➡</button>
+  <button class="grid-item" type="button" onclick="key_back()">↩</button>
+  <button class="grid-item" type="button" onclick="key_down()">⬇</button>
+  <button class="grid-item" type="button" onclick="key_viewmode()">⎚</button>
+  <button class="grid-item" type="button" onclick="key_volume_up()">🔊</button>
+  <button class="grid-item" type="button" onclick="">---NFLX---</button>
+  <button class="grid-item" type="button" onclick="key_channel_step_up()">➕</button>
+  <button class="grid-item" type="button" onclick="key_volume_down()">🔉</button>
+  <button class="grid-item" type="button" onclick="key_mute()">🔇</button>
+  <button class="grid-item" type="button" onclick="key_channel_step_down()">➖</button>
+  <button class="grid-item" type="button" onclick="key_digit1()">1</button>
+  <button class="grid-item" type="button" onclick="key_digit2()">2</button>
+  <button class="grid-item" type="button" onclick="key_digit3()">3</button>
+  <button class="grid-item" type="button" onclick="key_digit4()">4</button>
+  <button class="grid-item" type="button" onclick="key_digit5()">5</button>
+  <button class="grid-item" type="button" onclick="key_digit6()">6</button>
+  <button class="grid-item" type="button" onclick="key_digit7()">7</button>
+  <button class="grid-item" type="button" onclick="key_digit8()">8</button>
+  <button class="grid-item" type="button" onclick="key_digit9()">9</button>
+  <button class="grid-item" type="button" onclick="key_subtitle()">Subtitle</button>
+  <button class="grid-item" type="button" onclick="key_digit0()">0</button>
+  <button class="grid-item" type="button" onclick="key_teletext()">Text</button>
+  <button class="grid-item" type="button" onclick="key_sourceComputer()">HDMI3</button>
+  <button class="grid-item" type="button" onclick="key_sourceWii()">HDMI2</button>
+  <button class="grid-item" type="button" onclick="key_sourceChromecast()">HDMI1</button>
+  <button class="grid-item" type="button" onclick="sendVolume(10)">🔈 10</button>
+  <button class="grid-item" type="button" onclick="sendVolume(20)">🔈 20</button>
+  <button class="grid-item" type="button" onclick="sendVolume(24)">🔈 24</button>
+  <button class="grid-item" type="button" onclick="key_online()">🌐</button>
+  <button class="grid-item" type="button" onclick="key_next()">Next</button>
+  <button class="grid-item" type="button" onclick="key_previous()">Prev</button>
+  <button class="grid-item" type="button" onclick="key_dot()">⚫</button>
+</div-->
+
+  <script>
+    function sendCommand(command, payload) {
+
+      var url = "http://192.168.1.50:1925/6/" + command;
+
+      var myRequest = new XMLHttpRequest();
+      myRequest.onreadystatechange = function () {
+        if (this.readyState == 4) {
+          document.getElementById("content").innerHTML = this.responseText + ": " + payload;
+        }
+      };
+      myRequest.open("POST", url);
+      //myRequest.setRequestHeader("Authorization", bearer);
+      myRequest.send(payload);
+    }
+
+    function sendVolume(volume) {
+      command = "audio/volume";
+      //payload = 'muted=' + muted + '&current=' + volume;
+      payload = '{"muted": "false", "current": "' + volume + '"}';
+      sendCommand(command, payload);
+    }
+
+    function sendKey(key) {
+      command = "input/key";
+      //payload = 'key=' + key;
+      payload = '{"key": "' + key + '" }';
+      sendCommand(command, payload);
+    }
+
+    // left and right are have an r, g and b value
+    function sendAmbilight(left, right) {
+      command = "ambilight/cached";
+      sendCommand(command, payload);
+    }
+
+    function sendAmbilightMode(mode) {
+      command = "ambilight/mode";
+      sendCommand(command, payload);
+    }
+
+    /*
+    tv_general:
+    url: "http://192.168.1.50:1925/6/{{ command }}"
+    method: POST
+    payload: "{{ cmd_data }}"
+    content_type: 'application/json; charset=utf-8'
+    tv_volume:
+    
+    method: POST
+    payload: '{"muted": {{ muted }}, "current": {{ volume }}}'
+    content_type: 'application/json; charset=utf-8'
+    tv_key:
+    url: http://192.168.1.50:1925/6/input/key
+    method: POST
+    payload: '{ "key": {{ cmd_key }} }'
+    content_type: 'application/json; charset=utf-8'
+    tv_ambilight_cached:
+    url: http://192.168.1.50:1925/6/ambilight/cached
+    method: POST
+    payload: '{ "layer0": { "left": { "r": {{ left.r }}, "g": {{ left.g }}, "b": {{ left.b }} }, "right": { "r": {{ right.r }}, "g": {{ right.g }}, "b": {{ right.b }} } }, "layer1": { "left": { "r": {{ left.r }}, "g": {{ left.g }}, "b": {{ left.b }} }, "right": { "r": {{ right.r }}, "g": {{ right.g }}, "b": {{ right.b }} } }, "layer2": { "left": { "r": {{ left.r }}, "g": {{ left.g }}, "b": {{ left.b }} }, "right": { "r": {{ right.r }}, "g": {{ right.g }}, "b": {{ right.b }} } } }'
+    content_type: 'application/json; charset=utf-8'
+    tv_ambilight_mode:
+    url: http://192.168.1.50:1925/6/ambilight/mode
+    method: POST
+    payload: '{ "current": {{ mode }} }'
+    content_type: 'application/json; charset=utf-8'
+    */
+
+    function change_volume() { sendVolume("20"); }
+
+    function key_standby() { sendKey("Standby"); }
+    function key_back() { sendKey("Back"); }
+    //function key_find() { sendKey("Find"); }
+    function key_list() { sendKey("List"); }
+    function key_red() { sendKey("RedColour"); }
+    function key_green() { sendKey("GreenColour"); }
+    function key_yellow() { sendKey("YellowColour"); }
+    function key_blue() { sendKey("BlueColour"); }
+    function key_home() { sendKey("Home"); }
+    function key_volume_up() { sendKey("VolumeUp"); }
+    function key_volume_down() { sendKey("VolumeDown"); }
+    function key_mute() { sendKey("Mute"); }
+    function key_options() { sendKey("Options"); }
+    function key_dot() { sendKey("Dot"); }
+    function key_digit0() { sendKey("Digit0"); }
+    function key_digit1() { sendKey("Digit1"); }
+    function key_digit2() { sendKey("Digit2"); }
+    function key_digit3() { sendKey("Digit3"); }
+    function key_digit4() { sendKey("Digit4"); }
+    function key_digit5() { sendKey("Digit5"); }
+    function key_digit6() { sendKey("Digit6"); }
+    function key_digit7() { sendKey("Digit7"); }
+    function key_digit8() { sendKey("Digit8"); }
+    function key_digit9() { sendKey("Digit9"); }
+    function key_info() { sendKey("Info"); }
+    function key_up() { sendKey("CursorUp"); }
+    function key_down() { sendKey("CursorDown"); }
+    function key_left() { sendKey("CursorLeft"); }
+    function key_right() { sendKey("CursorRight"); }
+    function key_confirm() { sendKey("Confirm"); }
+    function key_next() { sendKey("Next"); }
+    function key_previous() { sendKey("Previous"); }
+    function key_adjust() { sendKey("Adjust"); }
+    function key_watch_tv() { sendKey("WatchTV"); }
+    function key_viewmode() { sendKey("Viewmode"); }
+    function key_teletext() { sendKey("Teletext"); }
+    function key_subtitle() { sendKey("Subtitle"); }
+    function key_channel_step_up() { sendKey("ChannelStepUp"); }
+    function key_channel_step_down() { sendKey("ChannelStepDown"); }
+    function key_source() { sendKey("Source"); }
+    function key_ambilight_on_off() { sendKey("AmbilightOnOff"); }
+    function key_play_pause() { sendKey("PlayPause"); }
+    function key_pause() { sendKey("Pause"); }
+    function key_fast_forward() { sendKey("FastForward"); }
+    function key_stop() { sendKey("Stop"); }
+    function key_rewind() { sendKey("Rewind"); }
+    function key_record() { sendKey("Record"); }
+    function key_online() { sendKey("Online"); }
+    function key_tvguide() { sendKey("TvGuide"); }
+    
+    async function key_sourceComputer() {
+      delay = 500
+      key_source();
+      await sleep(delay*3);
+      for (i = 0; i < 9; i++) {
+        key_down();
+        await sleep(delay);
+      }
+      key_confirm();
+    }
+    async function key_sourceWii() {
+      delay = 500
+      key_source();
+      await sleep(delay*3);
+      for (i = 0; i < 9; i++) {
+        key_down();
+        await sleep(delay);
+      }
+      key_up();
+      await sleep(delay);
+      key_confirm();
+    }
+    async function key_sourceChromecast() {
+      delay = 500
+      key_source();
+      await sleep(delay*3);
+      for (i = 0; i < 9; i++) {
+        key_down();
+        await sleep(delay);
+      }
+      for (i = 0; i < 2; i++) {
+        key_up();
+        await sleep(delay);
+      }
+      key_confirm();
+    }
+
+    async function key_numbers(numbers) {
+      for (i=0; i < numbers.length; i++) {
+        switch (numbers[i]) {
+          case 1:
+            key_digit1();
+            break;
+          case 2:
+            key_digit2();
+            break;
+          case 3:
+            key_digit3();
+            break;
+          case 4:
+            key_digit4();
+            break;
+          case 5:
+            key_digit5();
+            break;
+          case 6:
+            key_digit6();
+            break;
+          case 7:
+            key_digit7();
+            break;
+          case 8:
+            key_digit8();
+            break;
+          case 9:
+            key_digit9();
+            break;
+          case 0:
+            key_digit0();
+            break;
+          default:
+            break;
+        }
+        await sleep(100);
+      }
+    }
+
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    //change_volume();
+
+
+
+    
+
+    function getCommand(command) {
+      var url = "http://192.168.1.50:1925/6/" + command;
+
+      var myRequest = new XMLHttpRequest();
+      myRequest.onreadystatechange = function () {
+        if (this.readyState == 4) {
+          document.getElementById("content").innerHTML = this.responseText;
+        }
+      };
+      myRequest.open("GET", url);
+      //myRequest.setRequestHeader("Authorization", bearer);
+      myRequest.send();
+    }
+
+    function powerstate() { getCommand("powerstate") }
+    function getVolume() { getCommand("audio/volume") }
+    //function get1() { getCommand("activities/current") }
+    function get2() { getCommand("activities/tv") }
+    function get3() { getCommand("channeldb/tv/channelLists/allcab") }
+    //function get4() { getCommand("channeldb/tv/favoriteLists/1") }
+    //function get5() { getCommand("applications") }
+    function get6() { getCommand("channeldb/tv") }
+    function get7() { getCommand("channeldb/tv/favoriteLists/favcab") }
+    function get8() { getCommand("activities/browser") }
+    function get9() { getCommand("system") }
+    function get10() { getCommand("context") }
+    function get11() { getCommand("ambilight/power") }
+    function get12() { getCommand("ambilight/currentconfiguration") }
+    function get13() { getCommand("system/epgsource") }
+    function get14() { getCommand("system/storage") }
+    function get15() { getCommand("ambilight/supportedstyles") }
+    
+
+    function post1() { sendCommand("activities/launch", "app") }
+    function post2() { sendCommand("activities/tv", `{
+                    'channel': {
+                        'ccid': 20001,
+                        'preset': 1,
+                        'name': 'SVT1'
+                    },
+                    'channelList': {
+                        'id': 'allcab',
+                        'version': '1'
+                    }
+                }`) }
+    function post22() { sendCommand("activities/tv", "{'channel':{'ccid': 20001,'preset': 1,'name': 'SVT1'},'channelList': {'id': 'allcab','version': '1'}}") }
+    function post3() { sendCommand('powerstate', "{'powerstate': 'On'}") }
+    function post4() { sendCommand('activities/source', "{'source': 'HDMI1'}") }
+    function post5() { sendCommand('pair/request', "{'scope':['read','write','control']}") }
+
+
+    // https://github.com/eslavnov/pylips/blob/master/available_commands.json
+
+  </script>
+
+</body>
+
+</html>
+
