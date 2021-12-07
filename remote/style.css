@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  background-color: #222222;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  padding: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.categ_pow {
+  background-color: #e63946;
+}
+.categ_input {
+  background-color: #9c89b8;
+}
+.categ_media {
+  background-color: #219ebc;
+}
+.categ_arrow {
+  background-color: #8ecae6;
+}
+.categ_vol {
+  background-color: #c07167;
+}
+.categ_tv {
+  background-color: #90be6d;
+}
+.categ_num {
+  background-color: #70955c;
+}
+.categ_settings {
+  background-color: #bbb;
+}
